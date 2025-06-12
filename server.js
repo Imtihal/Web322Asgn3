@@ -14,9 +14,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const projectData = require("./modules/projects");
-require('pg');
-const Sequelize = require('sequelize');
-const HTTP_PORT = process.env.port || 8080;
+const HTTP_PORT = process.env.PORT || 8080;
 
 
 app.use(express.static(__dirname + '/public'));
