@@ -6,7 +6,7 @@
 *
 * https://www.senecapolytechnic.ca/about/policies/academic-integrity-policy.html
 *
-* Name: Imtihal Uddin Student ID: 178833232 Date: 5/30/2025
+* Name: Imtihal Uddin Student ID: 178833232 Date: 6/11/2025
 *
 ********************************************************************************/
 
@@ -14,13 +14,17 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const projectData = require("./modules/projects");
+require('pg');
+const Sequelize = require('sequelize');
 const HTTP_PORT = process.env.port || 8080;
 
 
-app.use(express.static('public'));
+app.use(express.static(__dirname + '/public'));
 
 projectData.initialize()
     .then(() => {
+
+        app.set('views', __dirname + '/views');
 
         app.get("/", (req, res) => {
             res.sendFile(path.join(__dirname, "views", "home.html"));
