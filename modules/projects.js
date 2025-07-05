@@ -34,6 +34,7 @@ function initialize() {
                 sector_id: projec.sector_id,
                 title: projec.title,
                 feature_img_url: projec.feature_img_url,
+                summary_short : projec.summary_short,
                 intro_short: projec.intro_short,
                 impact: projec.impact,
                 original_source_url: projec.original_source_url,
